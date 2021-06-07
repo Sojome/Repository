@@ -12,10 +12,11 @@ namespace EFRepository
     public class Repository : IRepository, IDisposable
     {
         protected DbContext Context;
-        public Repository(DbContext Context,
+        public Repository(DbContext context,
             bool autoDetectChangesEnabled = false,
             bool proxyCreationEnabled = false)
         {
+            this.Context = context;
             this.Context.Configuration.AutoDetectChangesEnabled = autoDetectChangesEnabled;
             this.Context.Configuration.ProxyCreationEnabled = proxyCreationEnabled;
         }
