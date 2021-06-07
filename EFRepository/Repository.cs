@@ -12,7 +12,8 @@ namespace EFRepository
     public class Repository : IRepository, IDisposable
     {
         protected DbContext Context;
-        public Repository(DbContext Context, bool autoDetectChangesEnabled = false,
+        public Repository(DbContext Context,
+            bool autoDetectChangesEnabled = false,
             bool proxyCreationEnabled = false)
         {
             this.Context.Configuration.AutoDetectChangesEnabled = autoDetectChangesEnabled;
