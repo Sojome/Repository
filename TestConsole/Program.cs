@@ -13,22 +13,34 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            IRepository Repository = new Modelo.Repository();
-            //IUnitOfWork Repository = new Modelo.RepositoryUoW();
-            var Categorias = Repository.FindEntitySet<Category>(c => true);
+            //IRepository Repository = new Modelo.Repository();
+            IUnitOfWork Repository = new Modelo.RepositoryUoW();
+            //Omitir para que salga
+            //var Categorias = Repository.FindEntitySet<Category>(c => true);
 
-            var Category1 = Repository.Create(new Category
+            //******************* Crear *******************
+            /*var Category1 = Repository.Create(new Category
             {
-                CategoryName="catDemosD"
-            });
+                CategoryName="catDemosEE"
+            });*/
 
-            var customer1 = Repository.Create(new Customer 
+            /*var customer1 = Repository.Create(new Customer 
             {
-                CustomerID = "PuceA",
-                CompanyName= "PUCESEB"
-            });
+                CustomerID = "PuceB",
+                CompanyName= "PUCESEEE"
+            });*/
 
-            //var Changes = Repository.Save();
+            //******************* Borrar *******************
+            //var cust = Repository.Delete(new Category { CategoryID = 13 });
+
+            //******************* Actualizar *******************
+            //var up = Repository.Update(new Category { CategoryID =16, CategoryName="TERE" });
+
+            //******************* Leer *******************
+            /*var mos = Repository.FindEntity<Category>(a => a.CategoryID == 16);
+            Console.WriteLine(mos.CategoryName);*/
+
+            var Changes = Repository.Save();
 
             Console.Write("Presiona enter para finalizar");
             Console.ReadLine();
