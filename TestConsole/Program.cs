@@ -33,8 +33,16 @@ namespace TestConsole
             //******************* Borrar *******************
             //var cust = Repository.Delete(new Category { CategoryID = 13 });
 
+            /*var Categoryremove = Repository.FindEntity<Category>(c => c.CategoryID == 14);
+            Repository.Delete(Categoryremove);*/
+
             //******************* Actualizar *******************
             //var up = Repository.Update(new Category { CategoryID =16, CategoryName="TERE" });
+
+            /*var UpdateID = Repository.FindEntity<Category>(p => p.CategoryID == 15);
+            UpdateID.CategoryName = "Pepas";
+            UpdateID.Description = "Esta feo";
+            Repository.Update(UpdateID);*/
 
             //******************* Leer *******************
             /*var mos = Repository.FindEntity<Category>(a => a.CategoryID == 16);
